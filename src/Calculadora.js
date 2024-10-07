@@ -20,9 +20,7 @@ class Calculadora{
         this.#resultado = numero;
     }
 
-    soma(num){
-        
-    }
+    
 }
 
 module.exports = Calculadora;
