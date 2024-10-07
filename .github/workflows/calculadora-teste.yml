@@ -1,1 +1,29 @@
 name: CI Workflow calculadora
+
+on:
+    push:
+        branches:
+            - main
+
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    test:
+        name: Rodar Teste com Jest
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+            - name: Instalação de Dependências
+              run: npm install
+
+            - name: Rodando Testes em Jest
+              run: npm test
